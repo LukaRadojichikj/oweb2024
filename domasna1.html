@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+            domasna1
+        </title>
+        <style>
+            body {
+                text-align: center;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1><strong>Order pizza!</strong></h1>
+        <h4>Select the pizza size:</h4>
+        <form method="post">
+            <label>
+                <input name="action" type="radio" value="Big" checked>
+                Big
+            </label><br>
+            <label>
+                <input name="action" type="radio" value="Medium">
+                Medium
+            </label><br>
+            <label>
+                <input name="action" type="radio" value="Small">
+                Small
+            </label><br>
+            <label><h4>Select the crust type:</h4>
+            <select name="crust">
+                <option selected>Deep Dish</option>
+                <option>Italian</option>
+            </select>
+            </label>
+            <label><h4>Select the filler:</h4>
+                <input name="action" type="checkbox"
+                value="sausage">
+                Sausages
+            </label><br>
+            <label>
+                <input name="action" type="checkbox"
+                value="pepper">
+                Peppers
+            </label><br>
+            <label>
+                <input name="action" type="checkbox"
+                value="mushroom">
+                Mushrooms
+            </label><br><br>
+            <label><strong>Name:</strong>
+                <input name = "name" type = "text" size="25" maxlength ="30"><br>
+            </label>
+            <label><strong>Number:</strong>
+            <input type="tel" name="phone" placeholder="123-456-789" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" required></label><br>
+            <label>
+            <textarea name="message" placeholder="Message." rows="5" cols="40"></textarea></label><br>
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>
