@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>
+    Погоди го зборот
+  </title>
+  <script language="javascript" src="dom3js.js"></script>
+  <style>
+    body {
+      text-align: center;
+    }
+
+    .word-container {
+      display: flex;
+      gap: 10px;
+      width: 30%;
+      margin: 100px auto 0;
+      margin-bottom: 50px;
+    }
+
+    .letter-box {
+      width: 80px;
+      height: 80px;
+      text-align: center;
+      font-size: 3em;
+    }
+
+    .hint {
+      background-color: rgb(86, 236, 86);
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border-radius: 15px;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+      transition: box-shadow 0.3s ease;
+    }
+
+    button:hover {
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      font-family: 'Poppins', sans-serif;
+      margin-top: 100px;
+    }
+
+    @keyframes shake {
+
+      0%,
+      100% {
+        transform: translateX(0);
+      }
+
+      20%,
+      60% {
+        transform: translateX(-10px);
+      }
+
+      40%,
+      80% {
+        transform: translateX(10px);
+      }
+    }
+
+    @keyframes flashRed {
+      0% {
+        background-color: transparent;
+      }
+
+      50% {
+        background-color: rgba(245, 5, 5, 0.614);
+      }
+
+      100% {
+        background-color: transparent;
+      }
+    }
+
+    @keyframes flashGreen {
+      0% {
+        background-color: transparent;
+      }
+
+      50% {
+        background-color: rgba(49, 245, 5, 0.837);
+      }
+
+      100% {
+        background-color: transparent;
+      }
+    }
+
+    .shake {
+      animation: shake 0.5s ease;
+    }
+
+    .flash-red {
+      animation: flashRed 0.5s ease;
+    }
+
+    .flash-green {
+      animation: flashGreen 0.5s ease;
+    }
+
+    #attemptsContainer {
+      font-size: 1.5em;
+      color: #333;
+      margin-top: 20px;
+    }
+
+    #result {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #f44336;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Погоди го зборот!</h1>
+  <div class="word-container" id="wordContainer"></div>
+  <button onclick="checkAnswer()">Check Answer</button>
+  <button onclick="restartGame()">Restart Game</button>
+  <p id="result"></p>
+  <p id="attemptsContainer"></p>
+</body>
+
+</html>
