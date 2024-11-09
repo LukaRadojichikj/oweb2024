@@ -144,4 +144,3 @@ function checkAnswer() {
 window.onload = function () {
     startGame();
 };
-
