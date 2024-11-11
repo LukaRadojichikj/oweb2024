@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Car Dealership</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+
+    <div class="header-nav-container">
+        <header>
+            <h1>Car Dealership</h1>
+        </header>
+
+        <nav>
+            <a href="#home" onclick="navigate('home'); event.preventDefault();">Home</a>
+            <a href="#used-cars" onclick="navigate('used-cars'); event.preventDefault();">Used Cars</a>
+            <a href="#unused-cars" onclick="navigate('unused-cars'); event.preventDefault();">New Cars</a>
+            <a href="#contact-page" onclick="navigate('contact-page'); event.preventDefault();">Contact</a>
+        </nav>
+
+        <div class="login">
+            <span id="welcomeMessage" onclick="loginAlert();">Login</span>
+        </div>
+    </div>
+
+    <main id="content">
+        <section id="home" class="page">
+            <h2>Welcome to Our Dealership</h2>
+            <div class="car-box-container">
+                <a href="#used-cars" onclick="navigate('used-cars'); event.preventDefault();">
+                    <div class="car-box">
+                        <img src="pictures/used.jpg" alt="Used Cars">
+                        <h3>Used Cars</h3>
+                    </div>
+                </a>
+                <a href="#unused-cars" onclick="navigate('unused-cars'); event.preventDefault();">
+                    <div class="car-box">
+                        <img src="pictures/new.jpg" alt="New Cars">
+                        <h3>New Cars</h3>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section id="used-cars" class="page" style="display: none;">
+            <h2>Used Cars</h2>
+            <div id="used-cars-gallery" class="car-gallery"></div>
+        </section>
+
+        <section id="unused-cars" class="page" style="display: none;">
+            <h2>New Cars</h2>
+            <div id="new-cars-gallery" class="car-gallery"></div>
+        </section>
+
+        <section id="customer-form" class="page" style="display: none;">
+            <h2>Customer Feedback Form</h2>
+            <form id="customerForm">
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" rows="4" placeholder="Leave your feedback here..."></textarea>
+
+                <label for="rating">Rate our website (1 to 10):</label>
+                <input type="range" id="rating" name="rating" min="1" max="10" value="5"
+                    oninput="this.nextElementSibling.value = this.value">
+                <output>5</output>
+
+                <p>Would you recommend this car dealership to others?</p>
+                <label><input type="radio" name="recommend" value="yes"> Yes</label>
+                <label><input type="radio" name="recommend" value="no"> No</label>
+                <label><input type="radio" name="recommend" value="dont_know" checked> I don't know</label>
+
+                <button type="submit">Submit Feedback</button>
+            </form>
+        </section>
+
+        <section id="contact-page" class="page" style="display: none;">
+            <h2>Contact Us</h2>
+            <p><strong>Working Hours:</strong> Monday to Friday, 9 AM - 5 PM</p>
+            <p><strong>Email:</strong> contact@cardealership.com</p>
+            <p><strong>Phone:</strong> +1 (123) 456-7890</p>
+        </section>
+    </main>
+
+    <footer>
+        <p><a href="#" onclick="showCustomerForm(); event.preventDefault();">Customer Feedback Form</a></p>
+    </footer>
+
+    <div id="carModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="Car Image">
+
+            <h3 id="modalTitle"></h3>
+            <p id="modalDescription"></p>
+
+            <div class="modal-links">
+                <a id="moreInfoLink" href="#" target="_blank">More Info</a>
+                <a id="reviewLink" href="#" target="_blank">Read Reviews</a>
+            </div>
+
+            <div class="likes-section">
+                <button id="likeButton">Like ❤️</button>
+                <span id="likeCount">0</span> Likes
+            </div>
+
+            <div class="comments-section">
+                <h4>Comments</h4>
+                <ul id="commentsList"></ul>
+                <input type="text" id="commentInput" placeholder="Add a comment...">
+                <button onclick="addComment()">Post</button>
+            </div>
+
+            <form id="testDriveForm">
+                <h4>Request a Test Drive</h4>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="date">Preferred Date:</label>
+                <input type="date" id="date" name="date" required>
+                <button type="submit">Submit Request</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
