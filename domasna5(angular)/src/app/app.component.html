@@ -1,0 +1,15 @@
+<div>
+    <app-card  
+        *ngFor="let voz of vozaci; index as indeks; first as prv; last as posleden; odd as nepar; even as par"
+        (click)="onAppView()"  
+        [motov]="voz"
+        [indx]="indeks + 1"
+        [class.is-first]="prv"
+        [class.is-even]="par"
+        [class.is-odd]="nepar"
+        [class.is-last]="posleden"
+        role="listitem"
+        [attr.aria-setsize]="vozaci.length"
+        [attr.aria-posinset]="indeks + 1"
+    ></app-card>
+</div>

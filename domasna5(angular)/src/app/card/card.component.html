@@ -1,0 +1,31 @@
+<div *ngIf="motov?.name != undefined" class="card" role="region" [attr.aria-labelledby]="'driver-' + indx">
+    
+    <div id="driver-{{indx}}" role="heading" aria-level="2">
+        {{indx + '. ' + motov?.name}}
+    </div>
+
+    <img 
+        *ngIf="motov?.iconUrl; else noImg" 
+        [src]="motov?.iconUrl" 
+        alt="{{'Image of ' + motov?.name}}"
+        role="img" 
+        [attr.aria-label]="'Icon image for ' + motov?.name">
+    
+    <ng-template #noImg>
+        <span role="alert" aria-live="polite">No image available</span>
+    </ng-template>
+
+    <p>Team: {{motov?.team || 'Unknown Team'}}</p>
+    <p>Points: {{motov?.points || 'No Points Available'}}</p>
+
+    <div [ngSwitch]="motov?.category" id="category-{{indx}}">
+        <p *ngSwitchCase="'EXPERT'" aria-describedby="'category-' + indx">Category: Expert</p>
+        <p *ngSwitchCase="'LUNATIC'" aria-describedby="'category-' + indx">Category: Lunatic</p>
+        <p *ngSwitchCase="'ASD'" aria-describedby="'category-' + indx">Category: Beginner</p>
+        <p *ngSwitchDefault aria-describedby="'category-' + indx">Category: No comment</p>
+    </div>
+
+    <button (click)="onDrvView()" [attr.aria-label]="'View details for ' + motov?.name">
+        View Driver
+    </button>
+</div>

@@ -1,0 +1,98 @@
+.begin {
+    background-color: lightcoral;
+    border: 2px solid red;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.adv {
+    background-color: lightblue;
+    border: 2px solid blue;
+    padding: 10px;
+    color: navy;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+img {
+    border-radius: 5px;
+    margin-bottom: 10px;
+    max-width: 100%;
+    height: auto;
+}
+
+button {
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 15px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    background-color: #f0f0f0;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card p {
+    font-size: 1rem;
+    margin: 5px 0;
+    color: #555;
+}
+
+.card button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.card.expert {
+    background-color: #e0f7fa;
+    border: 2px solid #00796b;
+    color: #004d40;
+}
+
+.card.beginner {
+    background-color: #fff8e1;
+    border: 2px solid #ffb300;
+    color: #ff6f00;
+}
+
+.card.lunatic {
+    background-color: #fbe9e7;
+    border: 2px solid #d84315;
+    color: #bf360c;
+}
